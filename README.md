@@ -13,7 +13,7 @@ Here you will find a selection of projects that highlight different areas of Com
 - **Agent Development**   
 
 ## 👥 Collaboration
-Some of these projects were developed in collaboration with fellow students. 
+Some of these projects were developed in collaboration with others students. 
 
 ## 🎯 Purpose
 This repository is intended as an academic portfolio to present my background and skills through practical work carried out during my studies.  
