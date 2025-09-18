@@ -1,3 +1,11 @@
+# University Project
+
+This project was developed during my degree in Computer Science at the **University of Turin** for "Web Semantico".  
+It was created as part of a group assignment together with [@PatricReineri](https://github.com/PatricReineri).
+
+---
+📚 Academic work – Computer Science, Università degli Studi di Torino
+
 # Progetto-Web-Semantico-2025
 Repo del Progetto web semantico 2025
 
