@@ -1,0 +1,763 @@
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix pl: <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:genid1 a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#compileTimeTyping
+
+xsd:compileTimeTyping a rdfs:Datatype .
+# 
+# http://www.w3.org/2001/XMLSchema#esecutionTimeTyping
+
+xsd:esecutionTimeTyping a rdfs:Datatype .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#createdBy
+
+pl:createdBy a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#executionRowByRow
+
+pl:executionRowByRow a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#implements
+
+pl:implements a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#isCreatorOf
+
+pl:isCreatorOf a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#originatesFrom
+
+pl:originatesFrom a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#translateFrom
+
+pl:translateFrom a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#use
+
+pl:use a owl:ObjectProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#hasCompileTyping
+
+pl:hasCompileTyping a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#hasEsecutionTyping
+
+pl:hasEsecutionTyping a owl:DatatypeProperty .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#hasLogo
+
+pl:hasLogo a owl:DatatypeProperty ;
+	rdfs:domain pl:ProgrammingLanguage .
+
+pl:ProgrammingLanguage a owl:Class .
+
+pl:hasLogo rdfs:range xsd:string .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Interpreter
+
+pl:Interpreter a owl:Class .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ProgrammingLanguage
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ProgrammingLanguageCreator
+
+pl:ProgrammingLanguageCreator a owl:Class .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#SemiCompiledProgrammingLanguage
+
+pl:SemiCompiledProgrammingLanguage a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ABC
+
+pl:ABC a owl:NamedIndividual , pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Alan_Cooper
+
+pl:Alan_Cooper a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Visual_Basic .
+
+pl:Visual_Basic a owl:NamedIndividual .
+
+pl:Alan_Cooper rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Alan Cooper"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Anders_Hejlsberg
+
+pl:Anders_Hejlsberg a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:TypeScript .
+
+pl:TypeScript a owl:NamedIndividual .
+
+pl:Anders_Hejlsberg rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Anders Hejlsberg"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Ary_Borenszweig
+
+pl:Ary_Borenszweig a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Crystal .
+
+pl:Crystal a owl:NamedIndividual .
+
+pl:Ary_Borenszweig rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Ary Borenszweig"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#BEAM_VM
+
+pl:BEAM_VM a owl:NamedIndividual , pl:Interpreter ;
+	pl:executionRowByRow pl:Elixir .
+
+pl:Elixir a owl:NamedIndividual .
+
+pl:BEAM_VM rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "BEAM VM"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Bjarne_Stroustrup
+
+pl:Bjarne_Stroustrup a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++> .
+
+<http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++> a owl:NamedIndividual .
+
+pl:Bjarne_Stroustrup rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Bjarne Stroustrup"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C
+
+pl:C a owl:NamedIndividual , pl:ProgrammingLanguage ;
+	pl:createdBy pl:Dennis_Ritchie .
+
+pl:Dennis_Ritchie a owl:NamedIndividual .
+
+pl:C pl:implements pl:ImperativeParadigm .
+
+pl:ImperativeParadigm a owl:NamedIndividual .
+
+pl:C pl:implements pl:ProceduralParadigm .
+
+pl:ProceduralParadigm a owl:NamedIndividual .
+
+pl:C pl:implements pl:StructuralParadigm .
+
+pl:StructuralParadigm a owl:NamedIndividual .
+
+pl:C pl:originatesFrom pl:ABC ;
+	pl:use pl:GCC .
+
+pl:GCC a owl:NamedIndividual .
+
+pl:C pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/The%20C%20Programming%20Language%20logo.svg" ;
+	rdfs:comment "A low-level, general-purpose programming language that has influenced many modern languages and is widely used for system programming."@en ;
+	rdfs:label "C"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#CLR
+
+pl:CLR a owl:NamedIndividual , pl:Interpreter ;
+	pl:executionRowByRow pl:Visual_Basic ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "CLR"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#CPython
+
+pl:CPython a owl:NamedIndividual , pl:Interpreter ;
+	pl:executionRowByRow pl:Python .
+
+pl:Python a owl:NamedIndividual .
+
+pl:CPython pl:translateFrom pl:Python ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "CPython"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Chris_Lattner
+
+pl:Chris_Lattner a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Swift .
+
+pl:Swift a owl:NamedIndividual .
+
+pl:Chris_Lattner pl:isCreatorOf pl:SwiftUI .
+
+pl:SwiftUI a owl:NamedIndividual .
+
+pl:Chris_Lattner rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Chris Lattner"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Crystal
+
+pl:Crystal a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Ary_Borenszweig ;
+	pl:implements pl:FunctionalParadigm .
+
+pl:FunctionalParadigm a owl:NamedIndividual .
+
+pl:Crystal pl:implements pl:ObjectOrientedParadigm .
+
+pl:ObjectOrientedParadigm a owl:NamedIndividual .
+
+pl:Crystal pl:originatesFrom pl:C ;
+	pl:use pl:CrystalC .
+
+pl:CrystalC a owl:NamedIndividual .
+
+pl:Crystal pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Crystal%20logo.svg" ;
+	rdfs:comment "A programming language that aims to combine the performance of C with the syntax of Ruby, designed for efficiency and concurrency."@en ;
+	rdfs:label "Crystal"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#CrystalC
+
+pl:CrystalC pl:translateFrom pl:Crystal .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Database_Engine
+
+pl:Database_Engine a owl:NamedIndividual , pl:Interpreter ;
+	pl:executionRowByRow pl:SQL .
+
+pl:SQL a owl:NamedIndividual .
+
+pl:Database_Engine rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "Database Engine"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Dennis_Ritchie
+
+pl:Dennis_Ritchie a pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:C ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Dennis Ritchie"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Donald_D._Chamberlin
+
+pl:Donald_D._Chamberlin a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:SQL ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Donald D. Chamberlin"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Dr._Sarah_Nilsson
+
+pl:Dr._Sarah_Nilsson a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:LambdaLang .
+
+pl:LambdaLang a owl:NamedIndividual .
+
+pl:Dr._Sarah_Nilsson rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Dr. Sarah Nilsson"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ECMAScript
+
+pl:ECMAScript a owl:NamedIndividual , pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Elixir
+
+pl:Elixir a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:José_Valim .
+
+pl:José_Valim a owl:NamedIndividual .
+
+pl:Elixir pl:implements pl:EventOrientedParadigm .
+
+pl:EventOrientedParadigm a owl:NamedIndividual .
+
+pl:Elixir pl:implements pl:FunctionalParadigm ;
+	pl:originatesFrom pl:Erlang .
+
+pl:Erlang a owl:NamedIndividual .
+
+pl:Elixir pl:use pl:BEAM_VM , pl:Elixirc .
+
+pl:Elixirc a owl:NamedIndividual .
+
+pl:Elixir pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Elixir%20logo.svg" ;
+	rdfs:comment "A functional, concurrent language built on the Erlang VM, known for its scalability and maintainability."@en ;
+	rdfs:label "Elixir"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Elixirc
+
+pl:Elixirc pl:translateFrom pl:Elixir .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Erlang
+
+pl:Erlang a pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#EventOrientedParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#FunctionalParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#GCC
+
+pl:GCC pl:translateFrom pl:C , pl:GoLang .
+
+pl:GoLang a owl:NamedIndividual .
+
+pl:GCC pl:translateFrom <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++> .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#GoLang
+
+pl:GoLang a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Robert_Griesemer .
+
+pl:Robert_Griesemer a owl:NamedIndividual .
+
+pl:GoLang pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom pl:C ;
+	pl:use pl:GCC ;
+	pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Go%20logo%20blue.svg" ;
+	rdfs:comment "A statically typed, compiled language designed for simplicity and efficiency in system programming and web services."@en ;
+	rdfs:label "GoLang"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Graydon_Hoare
+
+pl:Graydon_Hoare a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Rust .
+
+pl:Rust a owl:NamedIndividual .
+
+pl:Graydon_Hoare rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Graydon Hoare"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Guido_van_Rossum
+
+pl:Guido_van_Rossum a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Python ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Guido van Rossum"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ImperativeParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#JVM
+
+pl:JVM a owl:NamedIndividual , pl:Interpreter ;
+	pl:executionRowByRow pl:Scala .
+
+pl:Scala a owl:NamedIndividual .
+
+pl:JVM rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "JVM"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Java
+
+pl:Java a owl:NamedIndividual , pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#JavaScript
+
+pl:JavaScript a owl:NamedIndividual , pl:ProgrammingLanguage ;
+	pl:implements pl:EventOrientedParadigm , pl:FunctionalParadigm , pl:ObjectOrientedParadigm ;
+	pl:originatesFrom pl:ECMAScript ;
+	pl:use pl:V8 .
+
+pl:V8 a owl:NamedIndividual .
+
+pl:JavaScript pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Weak" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Unofficial%20JavaScript%20logo%202.svg" ;
+	rdfs:comment "A lightweight, interpreted scripting language commonly used for dynamic content in web development."@en ;
+	rdfs:label "JavaScript"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Jeff_Bezanson
+
+pl:Jeff_Bezanson a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Julia .
+
+pl:Julia a owl:NamedIndividual .
+
+pl:Jeff_Bezanson rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Jeff Bezanson"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#José_Valim
+
+pl:José_Valim a pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Elixir ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "José Valim"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Julia
+
+pl:Julia a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Jeff_Bezanson ;
+	pl:implements pl:FunctionalParadigm , pl:ObjectOrientedParadigm ;
+	pl:originatesFrom pl:Lisp .
+
+pl:Lisp a owl:NamedIndividual .
+
+pl:Julia pl:use pl:JuliaC .
+
+pl:JuliaC a owl:NamedIndividual .
+
+pl:Julia pl:use pl:Julia_Runtime .
+
+pl:Julia_Runtime a owl:NamedIndividual .
+
+pl:Julia pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Julia%20logo.svg" ;
+	rdfs:comment "A high-level, high-performance programming language for technical computing, with syntax similar to Python and MATLAB."@en ;
+	rdfs:label "Julia"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#JuliaC
+
+pl:JuliaC pl:translateFrom pl:Julia .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Julia_Runtime
+
+pl:Julia_Runtime a pl:Interpreter ;
+	pl:executionRowByRow pl:Julia ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "Julia Runtime"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#LambdaC
+
+pl:LambdaC a owl:NamedIndividual ;
+	pl:translateFrom pl:LambdaLang .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#LambdaLang
+
+pl:LambdaLang a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Dr._Sarah_Nilsson ;
+	pl:implements pl:FunctionalParadigm , pl:LogicParadigm .
+
+pl:LogicParadigm a owl:NamedIndividual .
+
+pl:LambdaLang pl:originatesFrom pl:Erlang ;
+	pl:use pl:LambdaC , pl:LambdaVM .
+
+pl:LambdaVM a owl:NamedIndividual .
+
+pl:LambdaLang pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Strong" ;
+	rdfs:comment "A modern functional language designed for concurrent and distributed programming. It emphasizes syntactic simplicity and native actor-based concurrency."@en ;
+	rdfs:label "LambdaLang"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#LambdaVM
+
+pl:LambdaVM a pl:Interpreter ;
+	pl:executionRowByRow pl:LambdaLang ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "LambdaVM"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Larry_Wall
+
+pl:Larry_Wall a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Perl .
+
+pl:Perl a owl:NamedIndividual .
+
+pl:Larry_Wall rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Larry Wall"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Lisp
+
+pl:Lisp a pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#LogicParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Martin_Odersky
+
+pl:Martin_Odersky a owl:NamedIndividual , pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:Scala ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Martin Odersky"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#MySQL
+
+pl:MySQL a owl:NamedIndividual ;
+	pl:translateFrom pl:SQL .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ObjectOrientedParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Objective-C
+
+pl:Objective-C a owl:NamedIndividual , pl:ProgrammingLanguage .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#PHP
+
+pl:PHP a owl:NamedIndividual , pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Rasmus_Lerdorf .
+
+pl:Rasmus_Lerdorf a owl:NamedIndividual .
+
+pl:PHP pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom pl:C ;
+	pl:use pl:Zend .
+
+pl:Zend a owl:NamedIndividual .
+
+pl:PHP pl:use pl:Zend_Engine .
+
+pl:Zend_Engine a owl:NamedIndividual .
+
+pl:PHP pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Weak" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/PHP%20logo.svg" ;
+	rdfs:comment "A server-side scripting language designed for web development but also used as a general-purpose programming language."@en ;
+	rdfs:label "PHP"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Perl
+
+pl:Perl a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Larry_Wall ;
+	pl:implements pl:FunctionalParadigm , pl:ObjectOrientedParadigm ;
+	pl:originatesFrom pl:C ;
+	pl:translateFrom pl:Perl ;
+	pl:use pl:Perl , pl:Perl_Interpreter .
+
+pl:Perl_Interpreter a owl:NamedIndividual .
+
+pl:Perl pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Weak" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Perl%20logo.svg" ;
+	rdfs:comment "A high-level, interpreted language known for its text processing capabilities and flexibility in web development."@en ;
+	rdfs:label "Perl"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Perl_Interpreter
+
+pl:Perl_Interpreter a pl:Interpreter ;
+	pl:executionRowByRow pl:Perl ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "Perl Interpreter"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ProceduralParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Python
+
+pl:Python a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Guido_van_Rossum ;
+	pl:implements pl:FunctionalParadigm , pl:ImperativeParadigm , pl:ObjectOrientedParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom pl:ABC ;
+	pl:use pl:CPython ;
+	pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Strong" ;
+	rdfs:comment "A high-level, interpreted programming language known for its readability and broad applicability in web development, data science, AI, and more."@en ;
+	rdfs:label "Python"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Rasmus_Lerdorf
+
+pl:Rasmus_Lerdorf a pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:PHP ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Rasmus Lerdorf"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Robert_Griesemer
+
+pl:Robert_Griesemer a pl:ProgrammingLanguageCreator ;
+	pl:isCreatorOf pl:GoLang ;
+	rdfs:comment "Creator of Programming Language"@en ;
+	rdfs:label "Robert Griesemer"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Rust
+
+pl:Rust a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Graydon_Hoare ;
+	pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++> ;
+	pl:use pl:Rustc .
+
+pl:Rustc a owl:NamedIndividual .
+
+pl:Rust pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Rust%20logo%20black.svg" ;
+	rdfs:comment "A systems programming language focused on safety and concurrency, known for its memory safety guarantees without a garbage collector."@en ;
+	rdfs:label "Rust"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Rustc
+
+pl:Rustc pl:translateFrom pl:Rust .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#SQL
+
+pl:SQL a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Donald_D._Chamberlin ;
+	pl:implements pl:StructuralParadigm ;
+	pl:use pl:Database_Engine , pl:MySQL ;
+	pl:hasCompileTyping "Dynamic" ;
+	pl:hasEsecutionTyping "Weak" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/SQL%20logo.svg" ;
+	rdfs:comment "A domain-specific language used in programming and managing relational databases, known for its declarative syntax."@en ;
+	rdfs:label "SQL"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Scala
+
+pl:Scala a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Martin_Odersky ;
+	pl:implements pl:EventOrientedParadigm , pl:FunctionalParadigm , pl:ObjectOrientedParadigm ;
+	pl:originatesFrom pl:Java ;
+	pl:use pl:JVM , pl:Scalac .
+
+pl:Scalac a owl:NamedIndividual .
+
+pl:Scala pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Scala%20logo.svg" ;
+	rdfs:comment "A hybrid functional and object-oriented programming language that runs on the Java Virtual Machine (JVM)."@en ;
+	rdfs:label "Scala"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Scalac
+
+pl:Scalac pl:translateFrom pl:Scala .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#StructuralParadigm
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Swift
+
+pl:Swift a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Chris_Lattner ;
+	pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom pl:Objective-C ;
+	pl:use pl:Swiftc .
+
+pl:Swiftc a owl:NamedIndividual .
+
+pl:Swift pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Swift%20logo.svg" ;
+	rdfs:comment "A modern programming language developed by Apple for iOS and macOS development, known for its safety and performance."@en ;
+	rdfs:label "Swift"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#SwiftUI
+
+pl:SwiftUI a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Chris_Lattner ;
+	pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:originatesFrom pl:Objective-C ;
+	pl:use pl:SwiftUIC .
+
+pl:SwiftUIC a owl:NamedIndividual .
+
+pl:SwiftUI pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/SwiftUI%20logo.svg" ;
+	rdfs:comment "A declarative framework for building user interfaces across all Apple platforms, using Swift."@en ;
+	rdfs:label "SwiftUI"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#SwiftUIC
+
+pl:SwiftUIC pl:translateFrom pl:SwiftUI .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Swiftc
+
+pl:Swiftc pl:translateFrom pl:Swift .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#TSC
+
+pl:TSC a owl:NamedIndividual ;
+	pl:translateFrom pl:TypeScript .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#TypeScript
+
+pl:TypeScript a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Anders_Hejlsberg ;
+	pl:implements pl:EventOrientedParadigm , pl:FunctionalParadigm , pl:ObjectOrientedParadigm ;
+	pl:originatesFrom pl:JavaScript ;
+	pl:use pl:TSC , pl:V8 ;
+	pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/TypeScript%20logo.svg" ;
+	rdfs:comment "A superset of JavaScript that adds static typing and is designed for large-scale application development."@en ;
+	rdfs:label "TypeScript"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#V8
+
+pl:V8 a pl:Interpreter ;
+	pl:executionRowByRow pl:JavaScript , pl:TypeScript ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "V8"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#VBC
+
+pl:VBC a owl:NamedIndividual ;
+	pl:translateFrom pl:Visual_Basic .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Visual_Basic
+
+pl:Visual_Basic a pl:ProgrammingLanguage , pl:SemiCompiledProgrammingLanguage ;
+	pl:createdBy pl:Alan_Cooper ;
+	pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm ;
+	pl:use pl:CLR , pl:VBC ;
+	pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Weak" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/Visual%20Basic%20logo.svg" ;
+	rdfs:comment "An event-driven programming language from Microsoft known for its ease of use in developing Windows applications."@en ;
+	rdfs:label "Visual Basic"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Zend
+
+pl:Zend pl:translateFrom pl:PHP .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Zend_Engine
+
+pl:Zend_Engine a pl:Interpreter ;
+	pl:executionRowByRow pl:PHP ;
+	rdfs:comment "Interpreter of some Programming Language"@en ;
+	rdfs:label "Zend Engine"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++
+
+<http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#C++> a pl:ProgrammingLanguage ;
+	pl:createdBy pl:Bjarne_Stroustrup ;
+	pl:implements pl:ImperativeParadigm , pl:ProceduralParadigm , pl:StructuralParadigm ;
+	pl:originatesFrom pl:C ;
+	pl:use pl:GCC ;
+	pl:hasCompileTyping "Static" ;
+	pl:hasEsecutionTyping "Strong" ;
+	pl:hasLogo "http://commons.wikimedia.org/wiki/Special:FilePath/C%2B%2B%20logo.svg" ;
+	rdfs:comment "An extension of the C programming language that includes object-oriented features, widely used for system and application software development."@en ;
+	rdfs:label "C++"@en .
+# 
+# Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

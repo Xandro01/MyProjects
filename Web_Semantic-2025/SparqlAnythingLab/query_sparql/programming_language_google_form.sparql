@@ -1,0 +1,250 @@
+PREFIX fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX pl:   <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+
+CONSTRUCT {
+  ?language a pl:ProgrammingLanguage ;
+            a ?semiCompiledIRI;
+            rdfs:label                   ?nameWithLang ;
+            rdfs:comment             ?descriptionWithLang ;
+            pl:hasLogo                    ?cleanLogo;
+            pl:originatesFrom          ?derivedFromIRI ;
+            pl:hasCompileTyping    ?cleanCompileTimeTyping ;
+            pl:hasEsecutionTyping  ?cleanRunTimeTyping ;
+            pl:implements               ?eventOrientedParadigmIRI ;
+            pl:implements               ?functionalParadigmIRI ;
+            pl:implements               ?imperativeParadigmIRI ;
+            pl:implements               ?logicParadigmIRI ;
+            pl:implements               ?objectOrientedParadigmIRI ;
+            pl:implements               ?proceduralParadigmIRI ;
+            pl:implements               ?structuralParadigmIRI ;
+            pl:implements               ?declarativeParadigmIRI ;
+            pl:createdBy               ?creatorIRI ;
+            pl:use                     ?compilerInst , ?interpreterInst .
+
+  
+  ?creatorIRI pl:isCreatorOf ?language ;
+              rdfs:label ?creatorLabel ;
+              rdfs:comment ?creatorComment .
+              
+
+  ?interpreterInst a pl:Interpreter ;
+                   rdfs:label ?interpreterLabel ;
+                   rdfs:comment ?interpreterCommentWithLang .
+
+  ?compilerInst pl:translateFrom ?language .
+  ?interpreterInst pl:executionRowByRow ?language .
+
+  ?creatorIRI a pl:ProgrammingLanguageCreator .
+  ?derivedFromIRI a pl:ProgrammingLanguage .
+
+  pl:createdBy a owl:ObjectProperty .
+  pl:implements a owl:ObjectProperty .
+  pl:use       a owl:ObjectProperty .
+  pl:translateFrom a owl:ObjectProperty .
+  pl:executionRowByRow a owl:ObjectProperty .
+  pl:originatesFrom a owl:ObjectProperty .
+  pl:isCreatorOf a owl:ObjectProperty .
+
+  xsd:compileTimeTyping    a rdfs:Datatype .
+  xsd:esecutionTimeTyping  a rdfs:Datatype .
+
+  pl:hasLogo   a owl:DatatypeProperty ;
+               rdfs:domain pl:ProgrammingLanguage ;
+               rdfs:range  xsd:string . 
+
+  pl:hasCompileTyping   a owl:DatatypeProperty .
+
+  pl:hasEsecutionTyping a owl:DatatypeProperty .
+
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=Data/programming_language_form_filled.csv,csv.headers=true> {
+
+    # timestamp
+    ?row <http://sparql.xyz/facade-x/data/Informazioni%20cronologiche> ?timestamp .
+
+    # name -> language & label
+    ?row <http://sparql.xyz/facade-x/data/Name> ?name .
+    BIND(REPLACE(?name, "\"", "") AS ?cleanName)
+    BIND(STRLANG(?name, "en") AS ?nameWithLang)
+    BIND(IRI(CONCAT(
+      "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+      REPLACE(?cleanName, " ", "_")
+    )) AS ?language)
+
+
+    # description
+    ?row <http://sparql.xyz/facade-x/data/Description> ?description .
+    BIND(REPLACE(?description, "\"", "") AS ?cleanDescription)
+    BIND(STRLANG(?cleanDescription, "en") AS ?descriptionWithLang)
+
+    # optional logo
+     OPTIONAL {
+       ?row <http://sparql.xyz/facade-x/data/Logo> ?logo .
+       BIND(REPLACE(?logo, "\"", "") AS ?cLogo)
+       FILTER(STRLEN(?cLogo) > 0)
+       BIND( ?cLogo
+        AS ?cleanLogo)
+     }
+
+        # optional EventOriented Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/EventOriented%20Paradigm> ?EventOrientedParadigm .
+      BIND(REPLACE(?EventOrientedParadigm, "\"", "") AS ?cleanEventParadigm)
+      FILTER(LCASE(?cleanEventParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "EventOrientedParadigm"
+      )) AS ?eventOrientedParadigmIRI)
+    }
+
+    # optional Functional Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Functional%20Paradigm> ?FunctionalParadigm .
+      BIND(REPLACE(?FunctionalParadigm, "\"", "") AS ?cleanFunctionalParadigm)
+      FILTER(LCASE(?cleanFunctionalParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "FunctionalParadigm"
+      )) AS ?functionalParadigmIRI)
+    }
+
+    # optional Imperative Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Imperative%20Paradigm> ?ImperativeParadigm .
+      BIND(REPLACE(?ImperativeParadigm, "\"", "") AS ?cleanImperativeParadigm)
+      FILTER(LCASE(?cleanImperativeParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "ImperativeParadigm"
+      )) AS ?imperativeParadigmIRI)
+    }
+
+    # optional Logic Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Logic%20Paradigm> ?LogicParadigm .
+      BIND(REPLACE(?LogicParadigm, "\"", "") AS ?cleanLogicParadigm)
+      FILTER(LCASE(?cleanLogicParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "LogicParadigm"
+      )) AS ?logicParadigmIRI)
+    }
+
+    # optional ObjectOriented Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/ObjectOriented%20Paradigm> ?ObjectOrientedParadigm .
+      BIND(REPLACE(?ObjectOrientedParadigm, "\"", "") AS ?cleanOOPParadigm)
+      FILTER(LCASE(?cleanOOPParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "ObjectOrientedParadigm"
+      )) AS ?objectOrientedParadigmIRI)
+    }
+
+    # optional Procedural Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Procedural%20Paradigm> ?ProceduralParadigm .
+      BIND(REPLACE(?ProceduralParadigm, "\"", "") AS ?cleanProceduralParadigm)
+      FILTER(LCASE(?cleanProceduralParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "ProceduralParadigm"
+      )) AS ?proceduralParadigmIRI)
+    }
+
+    # optional Structural Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Structural%20Paradigm> ?StructuralParadigm .
+      BIND(REPLACE(?StructuralParadigm, "\"", "") AS ?cleanStructuralParadigm)
+      FILTER(LCASE(?cleanStructuralParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "StructuralParadigm"
+      )) AS ?structuralParadigmIRI)
+    }
+
+    # optional Declarative Paradigm
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Declarative%20Paradigm> ?DeclarativeParadigm .
+      BIND(REPLACE(?DeclarativeParadigm, "\"", "") AS ?cleanDeclarativeParadigm)
+      FILTER(LCASE(?cleanDeclarativeParadigm) = "yes")
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        "DeclarativeParadigm"
+      )) AS ?declarativeParadigmIRI)
+    }
+
+    # optional derivedFrom
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Originates%20From%20which%20Language> ?derivedFrom .
+      FILTER(STRLEN(?derivedFrom) > 0)
+      BIND(REPLACE(?derivedFrom, "\"", "") AS ?cleanDerivedFrom)
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        REPLACE(?cleanDerivedFrom, " ", "_")
+      )) AS ?derivedFromIRI)
+      BIND(STRLANG(?cleanDerivedFrom, "en") AS ?derivedLabel)
+      BIND(STRLANG("Source programming language from which a language was derived or influenced", "en") AS ?derivedCommentWithLang)
+    }
+
+    # typing
+    ?row <http://sparql.xyz/facade-x/data/Compilation%20typing> ?compileTimeTyping .
+    BIND(REPLACE(?compileTimeTyping, "\"", "") AS ?cleanCompileTimeTyping)
+
+    ?row <http://sparql.xyz/facade-x/data/Execution%20%20typing> ?runTimeTyping .
+    BIND(REPLACE(?runTimeTyping, "\"", "") AS ?cleanRunTimeTyping)
+
+    # optional compiler
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Compiler%20Name> ?compiler .
+      BIND(REPLACE(?compiler, "\"", "") AS ?cleanCompiler)
+      FILTER(STRLEN(?cleanCompiler) > 0)
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        REPLACE(?cleanCompiler, " ", "_")
+      )) AS ?compilerInst)
+      BIND(?cleanCompiler AS ?compilerLabel)
+    }
+
+    # optional interpreter
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Interpreter%20Name> ?interpreter .
+      BIND(REPLACE(?interpreter, "\"", "") AS ?cleanInterpreter)
+      FILTER(STRLEN(?cleanInterpreter) > 0)
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        REPLACE(?cleanInterpreter, " ", "_")
+      )) AS ?interpreterInst)
+      BIND(STRLANG(?cleanInterpreter, "en") AS ?interpreterLabel)
+      BIND(STRLANG("Interpreter of some Programming Language", "en") AS ?interpreterCommentWithLang)
+    }
+
+    # creator
+    OPTIONAL{
+      ?row <http://sparql.xyz/facade-x/data/Creator> ?creator .
+      BIND(REPLACE(?creator, "\"", "") AS ?cleanCreator)
+      FILTER(STRLEN(?cleanCreator) > 0)
+      BIND(IRI(CONCAT(
+        "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+        REPLACE(?cleanCreator, " ", "_")
+      )) AS ?creatorIRI)
+      BIND(STRLANG(?cleanCreator, "en") AS ?creatorLabel)
+      BIND("Creator of Programming Language" AS ?creatorCom)
+      BIND(STRLANG(?creatorCom, "en") AS ?creatorComment)
+    }
+
+    # optional semi-compiled flag
+    OPTIONAL {
+      ?row <http://sparql.xyz/facade-x/data/Is%20semi-compiled%3F> ?semiCompiled .
+      BIND(REPLACE(?semiCompiled, "\"", "") AS ?cleanSemiCompiled)
+      FILTER(LCASE(?cleanSemiCompiled) = "yes")
+      BIND(pl:SemiCompiledProgrammingLanguage AS ?semiCompiledIRI)
+    }
+
+  }
+}

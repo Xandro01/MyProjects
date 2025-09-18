@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1749112672965" name="http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology" uri="Programming_Languages_Ontology_FINAL_VERSION_INFER.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1749112672965" name="http://www.semanticweb.org/patric/ontologies/2025/3/untitled-ontology-9" uri="Programming_Languages_Ontology_FINAL_VERSION.owl"/>
+    </group>
+</catalog>

@@ -1,0 +1,156 @@
+@prefix fx: <http://sparql.xyz/facade-x/ns/> .
+@prefix pl: <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+_:genid1 a owl:Ontology .
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#compatibleWith
+
+pl:compatibleWith a owl:DatatypeProperty .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#HighLevelCompiler
+
+pl:HighLevelCompiler a owl:Class .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#CPython
+
+pl:CPython a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "reference implementation of the Python programming language"@en ;
+	rdfs:label "CPython"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#CrystalC
+
+pl:CrystalC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Crystal programming language"@en ;
+	rdfs:label "CrystalC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#ElixirC
+
+pl:ElixirC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Elixir programming language"@en ;
+	rdfs:label "ElixirC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#GCC
+
+pl:GCC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "optimizing compiler produced by the GNU Project, key component of the GNU tool-chain and standard compiler for most projects related to GNU and the Linux kernel."@en ;
+	rdfs:label "GCC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#JVM
+
+pl:JVM a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "runtime environment that can execute Java bytecode as a result of compiling computer programs written in the Java programming language"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Javac
+
+pl:Javac a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "java compiler"@en ;
+	rdfs:label "Javac"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#JuliaC
+
+pl:JuliaC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Julia programming language"@en ;
+	rdfs:label "JuliaC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#LambdaC
+
+pl:LambdaC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Lambda programming language"@en ;
+	rdfs:label "LambdaC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#MySQL
+
+pl:MySQL a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "x86-64" ;
+	rdfs:comment "SQL database engine software"@en ;
+	rdfs:label "MySQL"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Perlcc
+
+pl:Perlcc a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "Compiler for the language Perl"@en ;
+	rdfs:label "Perlcc"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Rustc
+
+pl:Rustc a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler of the Rust programming language"@en ;
+	rdfs:label "Rustc"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Scalac
+
+pl:Scalac a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Scala programming language"@en ;
+	rdfs:label "Scalac"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Swiftc
+
+pl:Swiftc a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler of the Swift programming language"@en ;
+	rdfs:label "Swiftc"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#TSC
+
+pl:TSC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "Node.js" ;
+	rdfs:comment "compiler of TypeScript"@en ;
+	rdfs:label "TSC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#VBC
+
+pl:VBC a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "compiler for the Visual Basic .NET programming language"@en ;
+	rdfs:label "VBC"@en .
+# 
+# http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#Zend
+
+pl:Zend a owl:NamedIndividual , pl:HighLevelCompiler ;
+	pl:compatibleWith "cross-platform" ;
+	rdfs:comment "open source scripting engine that can be used to interpret the PHP programming language"@en ;
+	rdfs:label "Zend"@en .
+# 
+# Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,42 @@
+PREFIX fx:   <http://sparql.xyz/facade-x/ns/>
+PREFIX pl:   <http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT {
+  ?nomeStrumentoIRI a pl:HighLevelCompiler ;
+                rdfs:label ?nomeStrumentoLabel ;
+                pl:compatibleWith ?architettura ;
+                rdfs:comment ?descrizioneLabel .
+  
+  pl:compatibleWith a owl:DatatypeProperty .
+}
+WHERE {
+  SERVICE <x-sparql-anything:location=Data/compiler.json> {
+    
+    
+    [] fx:anySlot ?index ;
+       fx:anySlot ?item .
+    
+    ?item <http://sparql.xyz/facade-x/data/NomeStrumento> ?nomeStrumento ;
+          <http://sparql.xyz/facade-x/data/Descrizione> ?descrizione .
+    
+    
+    BIND(IRI(CONCAT(
+      "http://www.semanticweb.org/patric/ontologies/2025/3/Programming_Languages_Ontology#",
+      ENCODE_FOR_URI(REPLACE(?nomeStrumento, " ", "_"))
+    )) AS ?nomeStrumentoIRI)
+    
+    BIND(STRLANG(?nomeStrumento, "en") AS ?nomeStrumentoLabel)
+    BIND(STRLANG(?descrizione, "en") AS ?descrizioneLabel)
+    
+    
+    OPTIONAL {
+      ?item <http://sparql.xyz/facade-x/data/Architettura> ?arch .
+      FILTER(STRLEN(STR(?arch)) > 0)
+      BIND(?arch AS ?architettura)
+    }
+  }
+}

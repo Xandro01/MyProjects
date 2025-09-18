@@ -1,0 +1,82 @@
+[
+    {
+        "NomeStrumento": "LambdaC",
+        "Descrizione": "compiler for the Lambda programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "CPython",
+        "Descrizione": "reference implementation of the Python programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "GCC",
+        "Descrizione": "optimizing compiler produced by the GNU Project, key component of the GNU tool-chain and standard compiler for most projects related to GNU and the Linux kernel.",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "Rustc",
+        "Descrizione": "compiler of the Rust programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "Swiftc",
+        "Descrizione": "compiler of the Swift programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "Zend",
+        "Descrizione": "open source scripting engine that can be used to interpret the PHP programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "TSC",
+        "Descrizione": "compiler of TypeScript",
+        "Architettura": "Node.js"
+    },
+    {
+        "NomeStrumento": "Scalac",
+        "Descrizione": "compiler for the Scala programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "JuliaC",
+        "Descrizione": "compiler for the Julia programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "Perlcc",
+        "Descrizione": "Compiler for the language Perl",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "MySQL",
+        "Descrizione": "SQL database engine software",
+        "Architettura": "x86-64"
+    },
+    {
+        "NomeStrumento": "CrystalC",
+        "Descrizione": "compiler for the Crystal programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "VBC",
+        "Descrizione": "compiler for the Visual Basic .NET programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "JVM",
+        "Descrizione": "runtime environment that can execute Java bytecode as a result of compiling computer programs written in the Java programming language",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "Javac",
+        "Descrizione": "java compiler",
+        "Architettura": "cross-platform"
+    },
+    {
+        "NomeStrumento": "ElixirC",
+        "Descrizione": "compiler for the Elixir programming language",
+        "Architettura": "cross-platform"
+    }
+]
