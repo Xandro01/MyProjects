@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: darkblue;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mailclient.NewEmailController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="349.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="73.0" prefWidth="600.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane prefHeight="26.0" prefWidth="472.0" style="-fx-background-color: darkblue;" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="27.0">
+                                                   <children>
+                                                      <Label text="Da:" textFill="WHITE" AnchorPane.topAnchor="5.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane prefHeight="32.0" prefWidth="461.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Label fx:id="from" prefHeight="28.0" prefWidth="448.0" textFill="WHITE" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                                                         <font>
+                                                            <Font name="System Italic" size="12.0" />
+                                                         </font></Label>
+                                                   </children>
+                                                </AnchorPane>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="26.0" prefWidth="69.0" style="-fx-background-color: darkblue;" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="deleteButton" layoutX="30.0" mnemonicParsing="false" onAction="#deleteNewEmail" prefHeight="31.0" prefWidth="39.0" style="-fx-background-color: darkblue;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Icon/delete.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Elimina" />
+                                             </tooltip>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="32.0" prefWidth="39.0" style="-fx-background-color: darkblue;" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="sendButton" mnemonicParsing="false" onAction="#onSendButtonClick" style="-fx-background-color: darkblue;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Icon/sendemail.png" />
+                                                   </image>
+                                                   <effect>
+                                                      <ColorAdjust brightness="1.0" />
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Invia " />
+                                             </tooltip>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: darkblue;" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="25.0">
+                                       <children>
+                                          <Label text="A:" textFill="#fbf8f8" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" prefWidth="568.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="to" alignment="BASELINE_LEFT" layoutX="24.0" layoutY="3.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.68" prefHeight="32.0" prefWidth="572.0" promptText="inserisci un destinatario..." style="-fx-background-color: lightblue; -fx-border-color: white;" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="188.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="59.0" style="-fx-background-color: darkblue;" HBox.hgrow="NEVER">
+                                       <children>
+                                          <Label prefHeight="28.0" prefWidth="91.0" text="Oggetto:" textFill="#fdf8f8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="27.0" prefWidth="568.0" style="-fx-background-color: darkblue;" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <TextField fx:id="subject" alignment="BASELINE_LEFT" opacity="0.68" prefHeight="28.0" prefWidth="543.0" promptText="inserisci un oggetto..." style="-fx-border-color: white; -fx-background-color: lightblue;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="1.0">
+                                             <font>
+                                                <Font name="System Italic" size="12.0" />
+                                             </font></TextField>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="328.0" prefWidth="600.0" style="-fx-background-color: lightblue;" VBox.vgrow="ALWAYS">
+               <children>
+                  <HTMLEditor fx:id="text" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutY="7.0" prefHeight="327.0" prefWidth="600.0" style="-fx-background-color: lightblue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
