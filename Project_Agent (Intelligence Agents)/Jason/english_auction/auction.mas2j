@@ -1,0 +1,11 @@
+MAS my_environment {
+    agents: auctioneer;
+            sellerPaint;
+            sellerRolex;
+            sellerStatue;
+            buyerA;
+            buyerB;
+            buyerC;
+            buyerD;
+            buyerE;
+}

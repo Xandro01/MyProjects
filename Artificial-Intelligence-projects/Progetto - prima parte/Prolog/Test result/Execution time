@@ -1,0 +1,35 @@
+Gioco di base 
+
+first strategy: (opzione 1)
+    - lab big size few walls: 0.1  seconds
+    - lab big size more walls: 0.19  seconds
+    - lab example: 0.05  seconds
+    - lab little size few walls: 0.07  seconds
+    - lab little size more walls: 0.05  seconds
+    - lab multiple portal no obstacle: 0.05  seconds
+
+second strategy: (opzione 2)
+    - lab big size few walls: 0.53  seconds
+    - lab big size more walls: 0.65  seconds
+    - lab example: 0.21  seconds
+    - lab little size few walls: 0.28  seconds
+    - lab little size more walls: 0.22  seconds
+    - lab multiple portal no obstacle: 0.16  seconds
+
+Gioco del mostriciattolo 
+
+first strategy: (opzione 3)
+    - lab big size few walls: 49.99  seconds
+    - lab big size more walls: 160.46  seconds
+    - lab example: 35.34  seconds
+    - lab little size few walls: 1.56  seconds
+    - lab little size more walls: 10.25  seconds
+    - lab multiple portal no obstacle: 0.06  seconds
+
+second strategy: (opzione 4)
+    - lab big size few walls: 0.15  seconds
+    - lab big size more walls: 0.1  seconds
+    - lab example: 0.61  seconds
+    - lab little size few walls: 0.18  seconds
+    - lab little size more walls: 0.36  seconds
+    - lab multiple portal no obstacle: 0.1  seconds

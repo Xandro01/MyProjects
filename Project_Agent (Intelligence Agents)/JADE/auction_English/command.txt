@@ -1,0 +1,15 @@
+// Run
+java -cp ./lib/jade.jar:classes jade.Boot -gui -agents "peter:AuctioneerAgent;johnn:SellerAgent(paint, 300);rick:SellerAgent(rolex, 100);harry:SellerAgent(statue, 500);alex:BuyerAgent(1000, paint, rolex, statue);bart:BuyerAgent(700, rolex, statue);carl:BuyerAgent(700, paint, rolex);dennis:BuyerAgent(1700, paint, rolex, statue);ellie:BuyerAgent(500, paint, statue)"
+// Compile
+
+// Auctioneer
+javac -cp ./lib/jade.jar:. -d classes ./src/util/AgentMessage.java ./src/util/AuctionItem.java ./src/behavior/StartAuctionBehavior.java ./src/behavior/SellObjectBehavior.java ./src/AuctioneerAgent.java
+
+
+// Buyer
+javac -cp ./lib/jade.jar:. -d classes ./src/util/ServiceRegister.java ./src/util/AgentMessage.java ./src/util/AuctionItem.java ./src/BuyerAgent.java
+
+
+// Seller
+javac -cp ./lib/jade.jar:. -d classes ./src/util/ServiceRegister.java ./src/util/AgentMessage.java ./src/util/AuctionItem.java ./src/behavior/SellerInformBehavior.java ./src/SellerAgent.java
+

@@ -1,0 +1,86 @@
+{
+    "Pantalone": {
+        "definition": "indumento per coprire le gambe",
+        "terms": [
+            {
+                "term": "gamba",
+                "count": "26"
+            },
+            {
+                "term": "indumento",
+                "count": "25"
+            },
+            {
+                "term": "parte",
+                "count": "17"
+            },
+            {
+                "term": "corpo",
+                "count": "15"
+            }
+        ]
+    },
+    "Microscopio": {
+        "definition": "Strumento che permette di ingrandire oggetti ed elementi fino a una scala impossibile da raggiungere ad occhio nudo.",
+        "terms": [
+            {
+                "term": "strumento",
+                "count": "32"
+            },
+            {
+                "term": "oggetto",
+                "count": "21"
+            },
+            {
+                "term": "piccolo",
+                "count": "15"
+            },
+            {
+                "term": "scientifico",
+                "count": "14"
+            }
+        ]
+    },
+    "Pericolo": {
+        "definition": "Percezione umana innescata da un evento che mina la sicurezza del soggetto",
+        "terms": [
+            {
+                "term": "situazione",
+                "count": "28"
+            },
+            {
+                "term": "persona",
+                "count": "10"
+            },
+            {
+                "term": "incolumità",
+                "count": "9"
+            },
+            {
+                "term": "il",
+                "count": "8"
+            }
+        ]
+    },
+    "Euristica": {
+        "definition": "regola che permette di approssimare una soluzione ottima a un problema ",
+        "terms": [
+            {
+                "term": "ricerca",
+                "count": "10"
+            },
+            {
+                "term": "problema",
+                "count": "9"
+            },
+            {
+                "term": "strategia",
+                "count": "8"
+            },
+            {
+                "term": "utilizzare",
+                "count": "8"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+../../jason-bin-3/bin/jason auction.mas2j 
